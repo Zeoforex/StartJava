@@ -1,19 +1,19 @@
-public class Variable{
+public class Variable {
     public static void main(String[] args) {
-        char c = 'z';
-        boolean a = false;
-        int b = 14560;
-        double d = 2.44;
-        float f = 12.56f;
-        long l = 9856035;
-        short s = 120;
+        char cpu = 'i';
+        boolean booleanValue = false;
+        int memory = 4589;
+        double cpuFrequency = 2.44;
+        float shellVersion = 5.0f;
+        long resolution = 2073600;
+        short os = 86;
         byte by = 3;
-        System.out.println(c);
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(d);
-        System.out.println(f);
-        System.out.println(l);
+        System.out.println(cpu);
+        System.out.println(booleanValue);
+        System.out.println(memory);
+        System.out.println(cpuFrequency);
+        System.out.println(shellVersion);
+        System.out.println(resolution);
         System.out.println(by);
     }
 }
