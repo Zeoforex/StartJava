@@ -1,7 +1,7 @@
 public class Person {
 
     String name = "Peter";
-    String gender = "мужской"
+    String gender = "мужской";
     int age = 20; 
     double height = 1.80;
     int weight = 74;
@@ -19,7 +19,7 @@ public class Person {
     }
 
     String speak() {
-        return "разговаривать с людьми"
+        return "разговаривать с людьми";
     }
 
     void learnJava() {
