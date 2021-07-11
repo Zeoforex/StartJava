@@ -1,37 +1,38 @@
 public class CalculatorTest {
 
+
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
-        int first = calculator.inputFirstNumber();
-        char signOne = calculator.signInput();
-        int second = calculator.inputSecondNumber();
-        int result = calculator.totalValue(first,second,signOne);
+        boolean continueOrNo = true;
 
-        System.out.println(result);
-
-        String reply = "";
-        while (!reply.equals("yes") && !reply.equals("no")) {
-            System.out.println("Хотите продолжить вычисления? [yes/no]");
+        do {
+            System.out.print("Введите первое число: ");
             Scanner sc = new Scanner(System.in);
-            reply = sc.nextLine();
-        }
-        
-        while (reply.equals("yes")) {
+            int firstNumber = sc.nextInt();
 
-            int firstOne = calculator.inputFirstNumber();
-            char sign = calculator.signInput();
-            int secondOne = calculator.inputSecondNumber();
-            int resultOne = calculator.totalValue(firstOne,secondOne,sign);
+            System.out.print("Введите знак математической операции: ");
+            char sign = sc.next().charAt(0);
 
-            System.out.println(resultOne);
+            System.out.print("Введите второе число: ");
+            int secondNumber = sc.nextInt();
+            int result = calculator.calculate(firstNumber, secondNumber, sign);
 
-            reply = "";
-            while (!reply.equals("yes") && !reply.equals("no")) {
-                System.out.println("Хотите продолжить вычисления? [yes/no]");
-                Scanner sc = new Scanner(System.in);
-                reply = sc.nextLine();
+            System.out.println(result);
+
+            String reply = "";
+            while (!reply.equals("yes")) {
+                
+                System.out.print("Хотите продолжить вычисления? [yes/no] ");
+                Scanner scanner = new Scanner(System.in);
+                reply = scanner.nextLine();
+
+                if (reply.equals("no")) {
+                    continueOrNo = false;
+                    break;
+                }
             }
-        }
+
+        } while (continueOrNo);
     }
 }
