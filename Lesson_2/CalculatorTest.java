@@ -1,14 +1,14 @@
-public class CalculatorTest {
+import java.util.Scanner;
 
+public class CalculatorTest {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
+        Scanner sc = new Scanner(System.in);
 
-        boolean continueOrNo = true;
-
+        String reply = "";
         do {
             System.out.print("Введите первое число: ");
-            Scanner sc = new Scanner(System.in);
             int firstNumber = sc.nextInt();
 
             System.out.print("Введите знак математической операции: ");
@@ -20,19 +20,13 @@ public class CalculatorTest {
 
             System.out.println(result);
 
-            String reply = "";
-            while (!reply.equals("yes")) {
-                
+
+            while (!reply.equals("yes") && !reply.equals("no")) {
                 System.out.print("Хотите продолжить вычисления? [yes/no] ");
                 Scanner scanner = new Scanner(System.in);
                 reply = scanner.nextLine();
-
-                if (reply.equals("no")) {
-                    continueOrNo = false;
-                    break;
-                }
             }
 
-        } while (continueOrNo);
+        } while (reply.equals("yes"));
     }
 }

@@ -1,12 +1,7 @@
 import java.util.Scanner;
 
 public class Calculator {
-    
-    private int firstNumber;
-    private int secondNumber;
-    private char sign;
-
-    public int calculate(int firstNumber,int secondNumber, int sign) {
+    public int calculate(int firstNumber, int secondNumber, char sign) {
         int result = 0;
         switch (sign) {
             case '+' -> result = firstNumber + secondNumber;
