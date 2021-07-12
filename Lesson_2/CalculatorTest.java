@@ -20,13 +20,11 @@ public class CalculatorTest {
 
             System.out.println(result);
 
-
             while (!reply.equals("yes") && !reply.equals("no")) {
                 System.out.print("Хотите продолжить вычисления? [yes/no] ");
                 Scanner scanner = new Scanner(System.in);
                 reply = scanner.nextLine();
             }
-
         } while (reply.equals("yes"));
     }
 }
