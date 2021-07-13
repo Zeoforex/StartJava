@@ -2,22 +2,23 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
+    Scanner sc = new Scanner(System.in);
 
-    private String playerOne;
-    private String playerTwo;
+    private Player playerOne;
+    private Player playerTwo;
 
     int enteredNumber;
 
-    public GuessNumber(String playerOne, String playerTwo) {
+    public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
+    }
 
-        Scanner sc = new Scanner(System.in);
-
+    public void gameGo() {
         Random computerGenerator = new Random();
         int randomNumber = computerGenerator.nextInt(100) + 1;
-        while (true){
-            System.out.println(playerOne + " ввод числа:");
+        while (true) {
+            System.out.println(playerOne.getName() + " ввод числа:");
             enteredNumber = sc.nextInt();
             if (enteredNumber > randomNumber) {
                 System.out.println("Данное число больше того, что загадал компьютер");
@@ -27,7 +28,7 @@ public class GuessNumber {
                 System.out.println("Победил первый игрок ");
                 break;
             }
-            System.out.println(playerTwo + " ввод числа:");
+            System.out.println(playerTwo.getName() + " ввод числа:");
             enteredNumber = sc.nextInt();
             if (enteredNumber > randomNumber) {
                 System.out.println("Данное число больше того, что загадал компьютер");
