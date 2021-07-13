@@ -23,7 +23,7 @@ public class CalculatorTest {
             while (!reply.equals("yes") && !reply.equals("no")) {
                 System.out.print("Хотите продолжить вычисления? [yes/no] ");
                 Scanner scanner = new Scanner(System.in);
-                reply = scanner.nextLine();
+                reply = scanner.next();
             }
         } while (reply.equals("yes"));
     }
