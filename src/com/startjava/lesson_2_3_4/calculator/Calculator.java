@@ -8,7 +8,7 @@ public class Calculator {
 
         String reply = "";
         do {
-            System.out.println("Введите математическое выражение: Например(2+10) ");
+            System.out.println("Введите математическое выражение: Например(2 + 10) ");
             Scanner sc = new Scanner(System.in);
 
             String string = sc.nextLine();
@@ -17,7 +17,7 @@ public class Calculator {
             String[] signs = myText.split("\\w");
 
             int numFirst = Integer.parseInt(nums[0]);
-            char sign = signs[1].charAt(0);
+            char sign = signs[2].charAt(0);
             int numSecond = Integer.parseInt(nums[1]);
             calculate(numFirst, numSecond, sign);
 
