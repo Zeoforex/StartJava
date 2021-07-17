@@ -13,8 +13,8 @@ public class Calculator {
 
             String string = sc.nextLine();
             String myText = string.replaceAll("\\s","");
-            String[] nums = myText.split("\\D");
-            String[] signs = myText.split("\\w");
+            String[] nums = myText.split("\\D+");
+            String[] signs = myText.split("\\d+");
 
             int numFirst = Integer.parseInt(nums[0]);
             char sign = signs[1].charAt(0);
@@ -30,36 +30,23 @@ public class Calculator {
         } while (reply.equals("yes"));
     }
 
+
         private void calculate(int num1, int num2, char sign) {
-            int result = 0;
+            int result;
             switch (sign) {
-                case '+' -> {
-                    result = num1 + num2;
-                    System.out.println(result);
-                }
-                case '-' -> {
-                    result = num1 - num2;
-                    System.out.println(result);
-                }
-                case '*' -> {
-                    result = num1 * num2;
-                    System.out.println(result);
-                }
-                case '/' -> {
-                    result = num1 / num2;
-                    System.out.println(result);
-                }
+                case '+' -> result = num1 + num2;
+                case '-' -> result = num1 - num2;
+                case '*' -> result = num1 * num2;
+                case '/' -> result = num1 / num2;
                 case '^' -> {
                     result = 1;
                     for (int i = 0; i < num2; i++) {
                         result *= num1;
                     }
-                    System.out.println(result);
                 }
-                case '%' -> {
-                    result = num1 % num2;
-                    System.out.println(result);
-                }
+                case '%' -> result = num1 % num2;
+                default -> throw new IllegalStateException("Unexpected value: " + sign);
             }
+            System.out.println("Твой ответ: " + result);
     }
 }
