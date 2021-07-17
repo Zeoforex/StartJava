@@ -17,7 +17,7 @@ public class Calculator {
             String[] signs = myText.split("\\w");
 
             int numFirst = Integer.parseInt(nums[0]);
-            char sign = signs[2].charAt(0);
+            char sign = signs[1].charAt(0);
             int numSecond = Integer.parseInt(nums[1]);
             calculate(numFirst, numSecond, sign);
 
@@ -33,34 +33,33 @@ public class Calculator {
         private void calculate(int num1, int num2, char sign) {
             int result = 0;
             switch (sign) {
-                case '+':
+                case '+' -> {
                     result = num1 + num2;
                     System.out.println(result);
-                    break;
-                case '-':
+                }
+                case '-' -> {
                     result = num1 - num2;
                     System.out.println(result);
-                    break;
-                case '*':
+                }
+                case '*' -> {
                     result = num1 * num2;
                     System.out.println(result);
-                    break;
-                case '/' :
+                }
+                case '/' -> {
                     result = num1 / num2;
                     System.out.println(result);
-                    break;
-                case '^' : {
+                }
+                case '^' -> {
                     result = 1;
                     for (int i = 0; i < num2; i++) {
                         result *= num1;
                     }
                     System.out.println(result);
-                    break;
                 }
-                case '%':
+                case '%' -> {
                     result = num1 % num2;
                     System.out.println(result);
-                    break;
+                }
             }
     }
 }
