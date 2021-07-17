@@ -1,6 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
-
-import java.util.Scanner;
+package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
     public int calculate(int firstNumber, int secondNumber, char sign) {
