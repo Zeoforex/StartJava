@@ -12,11 +12,19 @@ public class Player {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getLastNumber() {
+        return attempts[count - 1];
+    }
+
     public int[] getAttempts() {
         return Arrays.copyOf(attempts, count);
     }
 
-    public void setAttempts(int number) {
+    public void setAttempt(int number) {
         attempts[count] = number;
         count++;
     }
@@ -25,11 +33,7 @@ public class Player {
         return count;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void nullArray() {
+    public void nullifyArray() {
         Arrays.fill(attempts, 0, count, 0);
     }
 }

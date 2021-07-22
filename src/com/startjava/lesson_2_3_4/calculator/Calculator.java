@@ -7,14 +7,10 @@ public class Calculator {
     private String sign;
 
     public int calculate(String expression) {
-        rightInput(expression);
+        splitExpression(expression);
         switch (sign) {
-            case "+" -> {
-                return firstNumber + secondNumber;
-            }
-            case "-" -> {
-                return firstNumber - secondNumber;
-            }
+            case "+" -> return firstNumber + secondNumber;
+            case "-" -> return firstNumber - secondNumber;
             case "*" -> {
                 return firstNumber * secondNumber;
             }
@@ -35,7 +31,7 @@ public class Calculator {
         }
     }
 
-    private void rightInput(String expression) {
+    private void splitExpression(String expression) {
         String[] array = expression.split(" ");
         firstNumber = Integer.parseInt(array[0]);
         sign = array[1];
