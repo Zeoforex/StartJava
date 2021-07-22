@@ -8,27 +8,22 @@ public class Calculator {
 
     public int calculate(String expression) {
         splitExpression(expression);
-        switch (sign) {
-            case "+" -> return firstNumber + secondNumber;
-            case "-" -> return firstNumber - secondNumber;
-            case "*" -> {
-                return firstNumber * secondNumber;
-            }
-            case "/" -> {
-                return firstNumber / secondNumber;
-            }
+        int result = switch (sign) {
+            case "+" -> firstNumber + secondNumber;
+            case "-" -> firstNumber - secondNumber;
+            case "*" -> firstNumber * secondNumber;
+            case "/" -> firstNumber / secondNumber;
             case "^" -> {
-                int result = 1;
+                int results = 1;
                 for (int i = 0; i < secondNumber; i++) {
-                        result *= firstNumber;
-                    }
-                return result;
+                    results *= firstNumber;
                 }
-            case "%" -> {
-                return firstNumber % secondNumber;
+                yield results;
             }
+            case "%" -> firstNumber % secondNumber;
             default -> throw new IllegalStateException("Unexpected value: " + sign);
-        }
+        };
+        return result;
     }
 
     private void splitExpression(String expression) {
