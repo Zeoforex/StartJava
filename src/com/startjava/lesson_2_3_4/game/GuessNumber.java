@@ -10,8 +10,7 @@ public class GuessNumber {
 
     Scanner sc = new Scanner(System.in);
     Random computerGenerator = new Random();
-    int enteredNumber;
-    int randomNumber = computerGenerator.nextInt(100) + 1;
+    private int randomNumber = computerGenerator.nextInt(100) + 1;
 
     public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
@@ -19,7 +18,7 @@ public class GuessNumber {
     }
 
     public void launch() {
-        while (makeMove(playerOne) && makeMove(playerTwo)){
+        while (makeMove(playerOne) && makeMove(playerTwo)) {
             System.out.println("Не угадал");
         }
         outputAttempts(playerOne);
@@ -28,24 +27,24 @@ public class GuessNumber {
         playerTwo.nullifyArray();
     }
 
-    private void inputAttempt(Player player) {
-        System.out.println(player.getName() + " " + "ввод числа:");
-        player.setAttempt(sc.nextInt());
-    }
-
     private boolean makeMove(Player player) {
         if (player.getCount() > 9) {
             System.out.println(player.getName() + " попытки кончились ");
             System.out.println("Число компьютера было " + randomNumber);
-            return true;
+            return false;
         }
         inputAttempt(player);
         return !checkAttempts(player);
     }
 
+    private void inputAttempt(Player player) {
+        System.out.println(player.getName() + " " + "ввод числа:");
+        player.setAttempt(sc.nextInt());
+    }
+
     private boolean checkAttempts(Player player) {
-        enteredNumber = player.getLastNumber();
-        if (enteredNumber ==  randomNumber) {
+        int enteredNumber = player.getLastNumber();
+        if (enteredNumber == randomNumber) {
             System.out.println("Игрок " + player.getName() + " вы угадали число с " + player.getCount() + " попытки");
             return true;
         }
